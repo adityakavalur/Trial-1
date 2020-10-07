@@ -1,6 +1,6 @@
 
 BINARIES=hello_world
-MPICXX=mpic++
+MPICXX=CC
 
 all: ${BINARIES}
 
