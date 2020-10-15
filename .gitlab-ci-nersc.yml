@@ -12,16 +12,16 @@ mpi-build:
     - whoami
     - ls -la
     - echo $SLURM_JOB_ID
-    - echo "Running from NERSC gitlab-ci file"
+    - echo "Running from NERSC gitlab-ci-nersc file"
   script:
     - hostname
     - whoami
     - ls -la
     - echo $SLURM_JOB_ID
-    - echo "Running from NERSC gitlab-ci file"
+    - echo "Running from NERSC gitlab-ci-nersc file"
   after_script:
     - hostname
     - whoami
     - ls -la
     - echo $SLURM_JOB_ID   
-    - echo "Running from NERSC gitlab-ci file"
+    - echo "Running from NERSC gitlab-ci-nersc file"
