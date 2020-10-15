@@ -1,0 +1,27 @@
+stages:
+  - build
+
+variables:
+  SCHEDULER_PARAMETERS:  "-C haswell -M escori -q xfer -N1 -t 00:02:00"
+
+mpi-build:
+  stage: build
+  tags: [cori]
+  before_script:
+    - hostname
+    - whoami
+    - ls -la
+    - echo $SLURM_JOB_ID
+    - echo "Running from default gitlab-ci file"
+  script:
+    - hostname
+    - whoami
+    - ls -la
+    - echo $SLURM_JOB_ID
+    - echo "Running from default gitlab-ci file"
+  after_script:
+    - hostname
+    - whoami
+    - ls -la
+    - echo $SLURM_JOB_ID   
+    - echo "Running from default gitlab-ci file"
