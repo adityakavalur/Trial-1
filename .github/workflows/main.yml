@@ -38,4 +38,4 @@ jobs:
           GITLAB_PROJECT_ID: "23130714"
           #The below password is really a PAT, needs read
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          POLL_TIMEOUT: "300"
+          POLL_TIMEOUT: "120"
