@@ -1,0 +1,10 @@
+stages:
+  - check
+
+env:
+  stage: check
+  tags: [gitlab-org-docker]
+  before_script:
+    - hostname
+    - whoami
+    - ls -la
