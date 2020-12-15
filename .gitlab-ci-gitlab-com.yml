@@ -4,7 +4,7 @@ stages:
 env:
   stage: check
   tags: [gitlab-org-docker]
-  before_script:
+  script:
     - hostname
     - whoami
     - ls -la
