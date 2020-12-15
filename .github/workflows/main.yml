@@ -34,7 +34,7 @@ jobs:
           GITLAB_HOSTNAME: "gitlab.com"
           GITLAB_USERNAME: "aditya.kavalur"
           #The below password is really a PAT, needs write
-          GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
+          GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD_RW }}
           GITLAB_PROJECT_ID: "23122231"
           #The below password is really a PAT, needs read
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
