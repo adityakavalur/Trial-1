@@ -4,7 +4,11 @@ stages:
 env:
   stage: check
   tags: [gitlab-org-docker]
+#    rules:
+#    - if: '$CI_PIPELINE_SOURCE == "push"'
+#      when: always
   script:
+    - echo "$CI_PIPELINE_SOURCE"
     - hostname
     - whoami
     - ls -la
