@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Mirror and run Gitlab CI on pull requests
+name: Mirror and run Gitlab CI on pull requests and push
 
 # Controls when the action will run. 
 on: [push, pull_request]
@@ -29,10 +29,10 @@ jobs:
           fetch-depth: 0
 
       # Runs a single command using the runners shell
-      - name: PR testing on external Gitlab
+      - name: PR and Push testing on external Gitlab
         uses: adityakavalur/gitlab-mirror-and-ci-action@master
         with:
-          args: "https://gitlab.com/aditya.kavalur/target-repo"
+          args: "https://gitlab.com/aditya.kavalur/target-repo.git"
         env:
           GITLAB_HOSTNAME: "gitlab.com"
           GITLAB_USERNAME: "aditya.kavalur"
