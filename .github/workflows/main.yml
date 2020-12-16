@@ -42,3 +42,4 @@ jobs:
           #The below password is really a PAT, needs read
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           POLL_TIMEOUT: "120"
+          GITHUB_EVENT_NAME: github.event_name
