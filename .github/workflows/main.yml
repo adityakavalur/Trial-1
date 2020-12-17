@@ -27,7 +27,13 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-
+          
+      - name: Print context
+        run: |
+          echo "GITHUB_WORKSPACE = $GITHUB_WORKSPACE"
+          echo "github.workspace = ${{ github.workspace }}"
+          echo "$GITHUB_CONTEXT"
+          
       # Runs a single command using the runners shell
       - name: PR and Push testing on external Gitlab
         uses: adityakavalur/gitlab-mirror-and-ci-action@master
