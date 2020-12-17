@@ -30,9 +30,7 @@ jobs:
           
       - name: Print context
         run: |
-          echo "GITHUB_WORKSPACE = $GITHUB_WORKSPACE"
-          echo "github.workspace = ${{ github.workspace }}"
-          echo "$GITHUB_CONTEXT"
+          echo "GITHUB ${{ github }}"
           
       # Runs a single command using the runners shell
       - name: PR and Push testing on external Gitlab
