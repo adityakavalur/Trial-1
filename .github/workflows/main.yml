@@ -3,14 +3,16 @@
 name: Mirror and run Gitlab CI on pull requests and push
 
 # Controls when the action will run. 
-#on: [push, pull_request]
-on: [push, pull_request, pull_request_target]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+#on: [push, pull_request, pull_request_target]
 #on: [push]
-  # Triggers the workflow on push or pull request events but only for the master branch
-#  push:
-#    branches: [ master ]
-#  pull_request:
-#    branches: [ master ]
+
 
   ## Allows you to run this workflow manually from the Actions tab
   #workflow_dispatch:
@@ -31,11 +33,12 @@ jobs:
           fetch-depth: 0
           #ref: ${{ github.event.pull_request.head.ref }}
       - uses: actions/checkout@v2
-        if: ${{ github.event_name == 'pull_request' && failure() }}
+        #if: ${{ github.event_name == 'pull_request' && failure() }}
+        if: github.event_name == 'pull_request'
         with:
           fetch-depth: 0
       - uses: actions/checkout@v2
-        if: ${{ github.event_name == 'pull_request_target' && failure() }}
+        if: github.event_name == 'pull_request_target'
         with:
           ref: ${{github.event.pull_request.head.ref}}
           repository: ${{github.event.pull_request.head.repo.full_name}}
@@ -55,7 +58,7 @@ jobs:
           GITLAB_USERNAME: "aditya.kavalur"
           #The below password is really a PAT, needs write
           GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD_ALL }}
-          GITLAB_PROJECT_ID: "23147442"
+          GITLAB_PROJECT_ID: "23192839"
           #The below password is really a PAT, needs read
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           POLL_TIMEOUT: "120"
