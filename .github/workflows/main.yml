@@ -26,16 +26,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'push'
         with:
           fetch-depth: 0
           #ref: ${{ github.event.pull_request.head.ref }}
       - uses: actions/checkout@v2
-        if: github.event_name == 'push'
+        if: ${{ github.event_name == 'pull_request' && failure() }}
         with:
           fetch-depth: 0
       - uses: actions/checkout@v2
-        if: github.event_name == 'pull_request_target'
+        if: ${{ github.event_name == 'pull_request_target' && failure() }}
         with:
           ref: ${{github.event.pull_request.head.ref}}
           repository: ${{github.event.pull_request.head.repo.full_name}}
