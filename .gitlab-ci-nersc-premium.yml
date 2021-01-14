@@ -3,7 +3,7 @@ stages:
 
 env:
   stage: check
-  tags: [runner:shell]
+  tags: ["runner:shell"]
 
   script:
     - echo "$CI_PIPELINE_SOURCE"
