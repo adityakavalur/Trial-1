@@ -1,6 +1,6 @@
-always-run:
-  tags: ["runner:shell"]
-  script: echo 'this should always run'
+#always-run:
+#  tags: ["runner:shell"]
+#  script: echo 'this should always run'
   
 on-pull-requests:
   tags: ["runner:shell"]
@@ -8,9 +8,9 @@ on-pull-requests:
   only:
     - external_pull_requests
 
-except-pull-requests:
-  tags: ["runner:shell"]
-  script: 
-    - echo 'this should not run on pull requests'
-  except:
-    - external_pull_requests
+#except-pull-requests:
+#  tags: ["runner:shell"]
+#  script: 
+#    - echo 'this should not run on pull requests'
+#  except:
+#    - external_pull_requests
